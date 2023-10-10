@@ -80,25 +80,21 @@ int main(void)
 */
 	int num1;
 	int num2;
-	num1 = ft_printf(" %c %c %c ", ' ', ' ', ' ');
+/*
+	printf("\n");
+	num1 = ft_printf(" %u ", -1);
 	printf("num1:%d",num1);
 	printf("\n");
-	num2 = printf(" %c %c %c ", ' ', ' ', ' ');
+	num2 = printf(" %u ", -1);
+	printf("num2:%d",num2);
+*/
+	printf("\n");
+	num1 = ft_printf(" %u ", 0);
+	printf("num1:%d",num1);
+	printf("\n");
+	num2 = printf(" %u ", 0);
 	printf("num2:%d",num2);
 
-	printf("\n");
-	num1 = ft_printf(" %c %c %c ", '2', '1', 0);
-	printf("num1:%d",num1);
-	printf("\n");
-	num2 = printf(" %c %c %c ", '2', '1', 0);
-	printf("num2:%d",num2);
-
-	printf("\n");
-	num1 = ft_printf(" %p ", 17);
-	printf("num1:%d",num1);
-	printf("\n");
-	num2 = printf(" %p ", 17);
-	printf("num2:%d",num2);
 	return (0);
 }
 

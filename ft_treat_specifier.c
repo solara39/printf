@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_treat_specifier(char c, va_list args)
 {
@@ -15,7 +14,7 @@ int	ft_treat_specifier(char c, va_list args)
 	else if (c == 'd' || c == 'i')
 		cnt = ft_handle_integer(va_arg(args, int));
 	else if (c == 'u')
-		cnt = ft_handle_unit(va_arg(args, unsigned long long));
+		cnt = ft_handle_unit(va_arg(args, unsigned int));
 	else if (c == 'x')
 		cnt = ft_handle_hexa(va_arg(args, unsigned int), 1);
 	else if (c == 'X')

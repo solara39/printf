@@ -1,10 +1,12 @@
 #include "ft_printf.h"
 
-static int	ft_count_digits(unsigned int n)
+static int	ft_count_digits(unsigned long long n)
 {
 	int	cnt;
 
 	cnt = 0;
+	if (n == 0)
+		return (1);
 	while (n > 0)
 	{
 		n /= 16;
@@ -13,7 +15,7 @@ static int	ft_count_digits(unsigned int n)
 	return (cnt);
 }
 
-char	*ft_changebase_tohexa(unsigned int n)
+char	*ft_changebase_tohexa(unsigned long long n)
 {
 	char	*p;
 	int	digits_cnt;
@@ -24,14 +26,16 @@ char	*ft_changebase_tohexa(unsigned int n)
 	if (p == NULL)
 		return (NULL);
 	j = digits_cnt - 1;
+	if (n == 0)
+		p[j] = '0';
 	while (n > 0)
 	{
-		if (n % 16 >= 10)
-			p[j--] = n % 16 + 87;
-		else
+		if (n % 16 < 10)
 			p[j--] = n % 16 + '0';
+		else
+			p[j--] = n % 16 + 87;
 		n /= 16;
 	}
-	p[digits_cnt - 1] = '\0';
+	p[digits_cnt] = '\0';
 	return (p);
 }

@@ -1,34 +1,58 @@
 #include "ft_printf.h"
 
-int	ft_putnbr_count(unsigned long long n)
+static int	ft_count_digits(unsigned int	n)
 {
-	int			cnt;
-	unsigned long long	d;
-	char			ch;
+	int	i;
 
-	cnt = 0;
-	d = 1;
-	while (n / d != 0)
+	i = 0;
+	if (n <= 0)
+		i++;
+	while (n != 0)
 	{
-		d *= 10;
-		cnt++;
+		n /= 10;
+		i++;
 	}
+	return (i);
+}
+
+char	*ft_change_toascii(unsigned int n)
+{
+	unsigned long	d;
+	int				i;
+	char			*p;
+
+	d = 1;
+	i = 0;
+	p = malloc(sizeof(char) * (ft_count_digits(n) + 1));
+	if (p == NULL)
+		return (NULL);
+	if (n == 0)
+	{
+		p[i] = '0';
+		i++;
+	}
+	while (n / d > 0)
+		d *= 10;
 	d /= 10;
 	while (d > 0)
 	{
-		ch = n / d + '0';
-		write(1, &ch, 1);
-		n %= 10;
+		p[i] = n / d + '0';
+		n %= d;
 		d /= 10;
+		i++;
 	}
-	return (cnt);
+	p[i] = '\0';
+	return (p);
 }
 
-int	ft_handle_unit(unsigned long long n)
+int	ft_handle_unit(unsigned int n)
 {
-	int	cnt;
+	char	*p;
+	int		cnt;
 
 	cnt = 0;
-	cnt = ft_putnbr_count(n);
+	p = ft_change_toascii(n);
+	cnt = ft_count_output(p);
+	free(p);
 	return (cnt);
 }
