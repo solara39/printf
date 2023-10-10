@@ -3,6 +3,7 @@
 
 int main(void)
 {
+	/*
     int num1 = ft_printf("m_c char  > %c            %c  <   ", 'a', 'b');
     printf("%d \n", num1);
     int num2 = printf("o_c char > %c            %c  <   ", 'a', 'b');
@@ -71,6 +72,33 @@ int main(void)
     num2 = printf("o_%% %%      > %c            %s  <   ", 'a', "abc");
     printf("%d \n", num2);
 
-    return (0);
+	printf("\n");
+	num1 = ft_printf(" %c %c %c ", ' ', ' ', ' ');
+	printf("%d \n", num1);
+	num2 = printf(" %c %c %c ", ' ', ' ', ' ');
+	printf("%d \n", num2);
+*/
+	int num1;
+	int num2;
+	num1 = ft_printf(" %c %c %c ", ' ', ' ', ' ');
+	printf("num1:%d",num1);
+	printf("\n");
+	num2 = printf(" %c %c %c ", ' ', ' ', ' ');
+	printf("num2:%d",num2);
+
+	printf("\n");
+	num1 = ft_printf(" %c %c %c ", '2', '1', 0);
+	printf("num1:%d",num1);
+	printf("\n");
+	num2 = printf(" %c %c %c ", '2', '1', 0);
+	printf("num2:%d",num2);
+
+	printf("\n");
+	num1 = ft_printf(" %p ", 17);
+	printf("num1:%d",num1);
+	printf("\n");
+	num2 = printf(" %p ", 17);
+	printf("num2:%d",num2);
+	return (0);
 }
 

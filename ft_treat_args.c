@@ -17,7 +17,7 @@ int	ft_treat_args(const char *format, va_list args)
 		}
 		else
 		{
-			ft_putchr_fd(format[i], 1);
+			ft_putchar_fd(format[i], 1);
 			cnt++;
 		}
 		i++;

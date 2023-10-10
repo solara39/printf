@@ -25,6 +25,6 @@ int	ft_count_output(char *p);
 char	*ft_tolower_str(char *c);
 char	*ft_toupper_str(char *c);
 void	ft_putstr_fd(char *s, int fd);
-void	ft_putchr_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd);
 
 #endif

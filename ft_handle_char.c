@@ -2,6 +2,9 @@
 
 int	ft_handle_char(char c)
 {
-    ft_putchr_fd(c, 1);
-    return (0);
+	int	len;
+
+	len = 0;
+	len = write(1, &c, 1);
+	return (len);
 }
