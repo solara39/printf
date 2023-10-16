@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_changebase_tohexa.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skondo <skondo@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 18:05:02 by skondo            #+#    #+#             */
+/*   Updated: 2023/10/16 18:28:31 by skondo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int	ft_count_digits(unsigned long long n)
@@ -18,8 +30,8 @@ static int	ft_count_digits(unsigned long long n)
 char	*ft_changebase_tohexa(unsigned long long n)
 {
 	char	*p;
-	int	digits_cnt;
-	int	j;
+	int		digits_cnt;
+	int		j;
 
 	digits_cnt = ft_count_digits(n);
 	p = malloc(sizeof(char) * (digits_cnt + 1));

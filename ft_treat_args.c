@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_treat_args.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skondo <skondo@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 18:13:31 by skondo            #+#    #+#             */
+/*   Updated: 2023/10/16 18:53:33 by skondo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <stdio.h>
 
 int	ft_treat_args(const char *format, va_list args)
 {
-	size_t  i;
-	size_t  cnt;
+	size_t	i;
+	size_t	cnt;
 
 	i = 0;
 	cnt = 0;
@@ -13,7 +25,8 @@ int	ft_treat_args(const char *format, va_list args)
 		if (format[i] == '%')
 		{
 			i++;
-			cnt += ft_treat_specifier(format[i], args);
+			if (format[i] != '\0')
+				cnt += ft_treat_specifier(format[i], args);
 		}
 		else
 		{

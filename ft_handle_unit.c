@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_unit.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skondo <skondo@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 18:09:21 by skondo            #+#    #+#             */
+/*   Updated: 2023/10/16 18:11:19 by skondo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static int	ft_count_digits(unsigned int	n)
+static int	ft_count_digits(unsigned int n)
 {
 	int	i;
 
@@ -27,10 +39,7 @@ char	*ft_change_toascii(unsigned int n)
 	if (p == NULL)
 		return (NULL);
 	if (n == 0)
-	{
-		p[i] = '0';
-		i++;
-	}
+		p[i++] = '0';
 	while (n / d > 0)
 		d *= 10;
 	d /= 10;

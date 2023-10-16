@@ -89,10 +89,14 @@ int main(void)
 	printf("num2:%d",num2);
 */
 	printf("\n");
-	num1 = ft_printf(" %u ", 0);
+	puts("[1]");
+	num1 = ft_printf("%", 0);
+	puts("");
+	puts("[2]");
 	printf("num1:%d",num1);
 	printf("\n");
-	num2 = printf(" %u ", 0);
+	puts("[3]");
+	num2 = printf("%", 0);
 	printf("num2:%d",num2);
 
 	return (0);
